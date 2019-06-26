@@ -213,7 +213,7 @@ print('''
 if(goodwill>=3):
     print(
     '''
-    'Congradulations, WE are proud to announce that you will be the new employee of the Intergalactic Inc.
+    'Congratulations, WE are proud to announce that you will be the new employee of the Intergalactic Inc.
     YOU were chosen out of millions of participants across the universe.
     That is why YOU should be proud!', the loud announcement rang throughout the control room.
     You were covered in confetti, but you were happy for some unknown reason.
