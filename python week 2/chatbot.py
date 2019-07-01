@@ -116,6 +116,42 @@ def is_valid_input(user_input, possible):
     if(user_input in possible):
         return True
     return False
+def computer_choice(options):
+    return random.choice(options)
+
+def get_result_for_rps(throw, computer_play):
+    if(computer_play == throw):
+        return 'tie'
+        print("It is a draw!")
+    elif(throw == 'rock'):
+        if(computer_play == 'scissors'):
+            return 'player'
+            print("The rock crushes the scissors. You won!")
+            player_score +=1
+        elif(computer_play == 'paper'):
+            return 'computer'
+            print("The paper covers the rock. I won!")
+            computer_score+=1
+    elif(throw == 'paper'):
+
+        if(computer_play == 'scissors'):
+            return 'computer'
+            print("The scissors cut the paper. I won!")
+            computer_score+=1
+        elif(computer_play == 'rock'):
+            return 'player'
+            print("The paper covers the rock. You won!")
+            player_score +=1
+    elif(throw == 'scissors'):
+
+        if(computer_play == 'paper'):
+            return 'player'
+            print("The scissors cut the paper. You won!")
+            player_score +=1
+        elif(computer_play == 'rock'):
+            return 'computer'
+            print("The rock crushes the scissors. I won!")
+            computer_play+=1
 
 def rock_paper_scissors(positiveAnswers, negativeAnswers):
     playing = True
@@ -124,6 +160,8 @@ def rock_paper_scissors(positiveAnswers, negativeAnswers):
     print('''
 Welcome to Rock-Paper-Scissors Game. Let's start a new game.
     ''')
+    computer_score =0
+    player_score =0
     while playing:
         throw = input('''What is your throw?
 
@@ -135,25 +173,9 @@ Enter scissors for SCISSORS.
         if(throw not in plays):
             print("Sorry. I not understand your input. Try again.")
             continue
-        computer_play = random.choice(plays)
+        computer_play = computer_choice(plays)
         print('I threw %s!'  %(computer_play))
-        if(computer_play == throw):
-            print("It is a draw!")
-        elif(throw == 'rock'):
-            if(computer_play == 'scissors'):
-                print("The rock crushes the scissors. You won!")
-            elif(computer_play == 'paper'):
-                print("The paper covers the rock. I won!")
-        elif(throw == 'paper'):
-            if(computer_play == 'scissors'):
-                print("The scissors cut the paper. I won!")
-            elif(computer_play == 'rock'):
-                print("The paper covers the rock. You won!")
-        elif(throw == 'scissors'):
-            if(computer_play == 'paper'):
-                print("The scissors cut the paper. You won!")
-            elif(computer_play == 'rock'):
-                print("The rock crushes the scissors. I won!")
+
         play_again = input("\nDo you want to play again?\n")
         if(play_again in positiveAnswers):
             continue
