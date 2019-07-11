@@ -1,0 +1,20 @@
+
+body{
+  color: #B3FAF1;
+  font-family: fantasy;
+  width: 700px;
+
+  margin-top: auto;
+  background-image: url(phoenix.jpg);
+}
+img{
+  /* max-width: 50%; */
+}
+.row{
+  display: flex;
+  flex-direction: horizontal;
+}
+.column{
+  padding: 100px;
+  background-color: black;
+}
